@@ -9,7 +9,6 @@ export default function Footer() {
     { icon: <Github className="w-5 h-5" />, href: "https://github.com", label: "GitHub" },
     { icon: <Linkedin className="w-5 h-5" />, href: "https://linkedin.com", label: "LinkedIn" },
     // { icon: <Twitter className="w-5 h-5" />, href: "https://twitter.com", label: "Twitter" },
-    // { icon: <Mail className="w-5 h-5" />, href: "mailto:ali.zaman@example.com", label: "Email" },
   ];
 
   const quickLinks = [
@@ -34,23 +33,14 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-extrabold mb-4 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              Ali Zaman
+              Ali Abid
             </h3>
             <p className="text-gray-400 mb-6 leading-relaxed max-w-md">
               AI Expert & Full Stack Developer specializing in RAG systems, AI agents, and intelligent applications. 
               Building the future of technology, one line of code at a time.
             </p>
             <div className="flex flex-col gap-3">
-              {/* <div className="flex items-center gap-3 text-gray-400">
-                <Mail className="w-5 h-5 text-indigo-400" />
-                <a href="mailto:ali.zaman@example.com" className="hover:text-white transition-colors">
-                  ali.zaman@example.com
-                </a>
-              </div>
-              <div className="flex items-center gap-3 text-gray-400">
-                <Phone className="w-5 h-5 text-indigo-400" />
-                <span>+1 (555) 123-4567</span>
-              </div> */}
+              
               <div className="flex items-center gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-indigo-400" />
                 <span>Available Worldwide</span>
@@ -102,7 +92,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Ali Zaman. All rights reserved.
+              © {currentYear} Ali Abid. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-gray-400">
               <a href="#" className="hover:text-indigo-400 transition-colors">Privacy Policy</a>

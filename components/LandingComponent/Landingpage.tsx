@@ -48,7 +48,7 @@ export default function Landingpage() {
             <div className="space-y-4">
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                 <TextType
-                  text={["Ali Zaman", ""]}
+                  text={["Ali Abid", ""]}
                   typingSpeed={75}
                   pauseDuration={1500}
                   showCursor

@@ -104,23 +104,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             </div>
 
             <div className="space-y-6">
-              {/* <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="p-3 bg-indigo-100 rounded-xl">
-                  <Mail className="w-6 h-6 text-indigo-600" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900 mb-1">Email</h4>
-                  <a href="mailto:ali.zaman@example.com" className="text-indigo-600 hover:text-indigo-700 transition-colors">
-                    ali.zaman@example.com
-                  </a>
-                </div>
-              </motion.div> */}
+              
 
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
