@@ -201,7 +201,7 @@ export const ScrollTimeline = ({
 
 
     const getCardClasses = () => {
-        const baseClasses = "relative z-30 rounded-lg transition-all duration-300";
+        const baseClasses = "relative z-60 rounded-lg transition-all duration-300";
         const variantClasses = {
   default: "",
   elevated: "",
