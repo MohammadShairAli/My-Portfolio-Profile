@@ -202,7 +202,7 @@ export const MorphingNavigation: React.FC<MorphingNavigationProps> = ({
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="px-5 py-2.5 text-sm font-bold lowercase tracking-wide"
+                  className="px-5 py-2.5 text-sm font-bold lowercase tracking-wide flex flex-col justify-center items-center"
                 >
                   {link.icon && <span className="mr-2 inline-block">{link.icon}</span>}
                   {link.label}
@@ -231,6 +231,7 @@ export const MorphingNavigation: React.FC<MorphingNavigationProps> = ({
               </div>
             )}
           </motion.button>
+
         </motion.nav>
       </motion.header>
 

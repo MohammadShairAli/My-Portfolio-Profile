@@ -203,7 +203,7 @@ export const ScrollTimeline = ({
     const getCardClasses = () => {
         const baseClasses = "relative z-30 rounded-lg transition-all duration-300";
         const variantClasses = {
-            default: " shadow-sm",
+            // default: " shadow-sm",
             elevated: " ",
             outlined: " backdrop-blur border-2 ",
             filled: " border ",
@@ -229,10 +229,10 @@ export const ScrollTimeline = ({
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
                     {title}
                 </h2>
-                <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-6">
+                <p className="mb-10 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-6">
                     {subtitle}
                 </p>
-                <div className="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto rounded-full"></div>
+                <div className=" w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto rounded-full"></div>
             </div>
 
             <div className="relative max-w-6xl mx-auto px-4 pb-24">
@@ -280,7 +280,7 @@ export const ScrollTimeline = ({
                                 }}
                             >
                                 <motion.div
-                                    className="w-20 h-20 rounded-full"
+                                    className="w-10 h-10 rounded-full"
                                     style={{
                                         background:
                                             "radial-gradient(circle, rgba(168,85,247,0.8) 0%, rgba(99,102,241,0.5) 40%, rgba(34,211,238,0) 70%)",
@@ -293,11 +293,11 @@ export const ScrollTimeline = ({
                                     animate={{
                                         scale: [1, 1.3, 1],
                                     }}
-                                    transition={{
-                                        duration: 2,
-                                        repeat: Infinity,
-                                        ease: "easeInOut",
-                                    }}
+                                    // transition={{
+                                    //     duration: 2,
+                                    //     repeat: Infinity,
+                                    //     ease: "easeInOut",
+                                    // }}
                                 />
                             </motion.div>
                         </>

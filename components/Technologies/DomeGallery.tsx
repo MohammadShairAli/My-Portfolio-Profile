@@ -467,9 +467,9 @@ export default function DomeGallery({
                     startPosRef.current = null;
                     cancelTapRef.current = !isTap;
 
-                    if (isTap && tapTargetRef.current && !focusedElRef.current) {
-                        openItemFromElement(tapTargetRef.current);
-                    }
+                    // if (isTap && tapTargetRef.current && !focusedElRef.current) {
+                    //     openItemFromElement(tapTargetRef.current);
+                    // }
                     tapTargetRef.current = null;
 
                     if (cancelTapRef.current) setTimeout(() => (cancelTapRef.current = false), 120);

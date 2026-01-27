@@ -9,7 +9,7 @@ export default function ProjectsPage() {
             subtitle: "Enterprise Restaurant Management SAAS",
             borderColor: "#EF4444",
             gradient: "linear-gradient(145deg, #EF4444, #B91C1C)",
-            url: "https://github.com"
+            url: "https://dinein.pk/"
         }, 
         {
             image: "/travelmultiverse1.png",
@@ -17,7 +17,7 @@ export default function ProjectsPage() {
             subtitle: "AI-Powered Travel Discovery & Booking Platform",
             borderColor: "rgb(8, 131, 149)",
             gradient: "linear-gradient(145deg, rgb(8, 131, 149), #000)",
-            url: "https://github.com"
+            url: "https://travelmultiverse.com/"
         }, 
         {
             image: "/FStreet1.png",
@@ -25,7 +25,7 @@ export default function ProjectsPage() {
             subtitle: "Real-time Restaurant Table Booking System",
             borderColor: "oklch(0.5354 0.103 41.76)",
             gradient: "linear-gradient(145deg, oklch(0.5354 0.103 41.76), #000)",
-            url: "https://github.com"
+            url: "https://fstsocial.com/"
         }, 
         {
             image: "/Georgia1.png",
@@ -33,7 +33,7 @@ export default function ProjectsPage() {
             subtitle: "Property Discovery & Investment Platform",
             borderColor: "oklch(0.45 0.085 224.283)",
             gradient: "linear-gradient(145deg, oklch(0.45 0.085 224.283), #000)",
-            url: "https://github.com"
+            url: "https://georgiaforeclosure.egtw.org/"
         }, 
         {
             image: "/Amazon1.png",
@@ -84,7 +84,7 @@ export default function ProjectsPage() {
                             PORTFOLIO SHOWCASE
                         </span>
                     </div>
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-7 pb-5">
                         Featured Projects
                     </h2>
                     <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
@@ -93,7 +93,7 @@ export default function ProjectsPage() {
                     <div className="w-32 h-1.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 mx-auto rounded-full mt-6 shadow-lg"></div>
                     
                     {/* Stats bar */}
-                    <div className="flex flex-wrap justify-center gap-8 mt-12 pt-8 border-t border-gray-200">
+                    {/* <div className="flex flex-wrap justify-center gap-8 mt-12 pt-8 border-t border-gray-200">
                         <div className="text-center">
                             <div className="text-3xl font-bold text-indigo-600">8+</div>
                             <div className="text-sm text-gray-600 mt-1">Projects</div>
@@ -106,7 +106,7 @@ export default function ProjectsPage() {
                             <div className="text-3xl font-bold text-pink-600">7+</div>
                             <div className="text-sm text-gray-600 mt-1">Years Experience</div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 
                 <div className="relative">

@@ -70,7 +70,7 @@ export default function Home() {
       <ProjectsPage/>
       <TechnologiesPage/>
 
-      <section id="experience" className="py-20 bg-gradient-to-b from-white to-indigo-50">
+      <section id="experience" className="pb-20 bg-gradient-to-b from-white to-indigo-50">
         <ScrollTimeline 
           events={events}
           title="Professional Journey"
@@ -82,7 +82,6 @@ export default function Home() {
           cardEffect="shadow"
         />
       </section>
-
       <ContactForm />
       <Footer />
       

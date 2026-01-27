@@ -102,7 +102,7 @@ export default function Landingpage() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden lg:block">
           <button 
             onClick={scrollToNext}
@@ -111,7 +111,7 @@ export default function Landingpage() {
           >
             <ArrowDown className="w-6 h-6 text-indigo-600" />
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

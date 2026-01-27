@@ -11,7 +11,7 @@ export const Card = ({ children, className, ...props }) => {
   return (
     <div
       className={cn(
-        "p-5 w-full rounded-lg bg-white transition-all duration-300",
+        "p-5 w-full rounded-lg bg-white transition-all duration-300 shadow-2xl",
         className
       )}
       {...props}

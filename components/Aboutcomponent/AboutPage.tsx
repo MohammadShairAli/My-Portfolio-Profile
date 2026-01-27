@@ -66,7 +66,7 @@ export default function AboutPage() {
             <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <Database className="w-12 h-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Data & AI</h3>
-              <p className="text-gray-600">Vector DBs, PostgreSQL, MongoDB, Redis</p>
+              <p className="text-gray-600">Vector DBs, PostgreSQL, MongoDB, Redis, Celery</p>
             </div>
           </div>
         </div>

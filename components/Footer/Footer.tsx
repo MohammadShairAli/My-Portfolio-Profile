@@ -8,8 +8,8 @@ export default function Footer() {
   const socialLinks = [
     { icon: <Github className="w-5 h-5" />, href: "https://github.com", label: "GitHub" },
     { icon: <Linkedin className="w-5 h-5" />, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: <Twitter className="w-5 h-5" />, href: "https://twitter.com", label: "Twitter" },
-    { icon: <Mail className="w-5 h-5" />, href: "mailto:ali.zaman@example.com", label: "Email" },
+    // { icon: <Twitter className="w-5 h-5" />, href: "https://twitter.com", label: "Twitter" },
+    // { icon: <Mail className="w-5 h-5" />, href: "mailto:ali.zaman@example.com", label: "Email" },
   ];
 
   const quickLinks = [
@@ -41,7 +41,7 @@ export default function Footer() {
               Building the future of technology, one line of code at a time.
             </p>
             <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3 text-gray-400">
+              {/* <div className="flex items-center gap-3 text-gray-400">
                 <Mail className="w-5 h-5 text-indigo-400" />
                 <a href="mailto:ali.zaman@example.com" className="hover:text-white transition-colors">
                   ali.zaman@example.com
@@ -50,7 +50,7 @@ export default function Footer() {
               <div className="flex items-center gap-3 text-gray-400">
                 <Phone className="w-5 h-5 text-indigo-400" />
                 <span>+1 (555) 123-4567</span>
-              </div>
+              </div> */}
               <div className="flex items-center gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-indigo-400" />
                 <span>Available Worldwide</span>

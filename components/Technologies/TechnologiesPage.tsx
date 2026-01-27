@@ -26,7 +26,7 @@ export default function TechnologiesPage() {
                             TECH STACK
                         </span>
                     </div>
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6 pb-6">
                         Technologies & Expertise
                     </h2>
                     <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium mb-4">
@@ -38,7 +38,7 @@ export default function TechnologiesPage() {
                     <div className="w-32 h-1.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 mx-auto rounded-full shadow-lg"></div>
                     
                     {/* Tech Categories */}
-                    <div className="flex flex-wrap justify-center gap-6 mt-12">
+                    <div className="flex flex-wrap justify-center gap-6 mt-12 pb-12">
                         {techCategories.map((category, idx) => (
                             <div 
                                 key={idx}

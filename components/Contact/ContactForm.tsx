@@ -21,22 +21,48 @@ export default function ContactForm() {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+  //   // Simulate form submission
+  //   await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+  //   setIsSubmitting(false);
+  //   setIsSubmitted(true);
     
-    // Reset form after showing success message
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitted(false);
-    }, 3000);
-  };
+  //   // Reset form after showing success message
+  //   setTimeout(() => {
+  //     setFormData({ name: '', email: '', subject: '', message: '' });
+  //     setIsSubmitted(false);
+  //   }, 3000);
+  // };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const res = await fetch("/api/sendEmail", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } else {
+      const data = await res.json();
+      alert("Error: " + data.message);
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong");
+  } finally {
+    setIsSubmitting(false);
+    setTimeout(() => setIsSubmitted(false), 3000);
+  }
+};
 
   return (
     <section id="contact" className="min-h-screen w-full py-24 px-4 sm:px-6 md:px-10 lg:px-16 bg-gradient-to-b from-white via-indigo-50/30 to-white relative overflow-hidden">
@@ -61,7 +87,7 @@ export default function ContactForm() {
             Have a project in mind? Let's discuss how we can bring your ideas to life
           </p>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-            Whether it's AI solutions, full-stack development, or cloud architecture, I'm here to help
+            Whether it's AI solutions, full-stack development, Automation, or cloud architecture, I'm here to help
           </p>
           <div className="w-32 h-1.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 mx-auto rounded-full shadow-lg"></div>
         </div>
@@ -78,7 +104,7 @@ export default function ContactForm() {
             </div>
 
             <div className="space-y-6">
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -94,7 +120,7 @@ export default function ContactForm() {
                     ali.zaman@example.com
                   </a>
                 </div>
-              </motion.div>
+              </motion.div> */}
 
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
