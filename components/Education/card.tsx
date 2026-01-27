@@ -11,7 +11,7 @@ export const Card = ({ children, className, ...props }) => {
   return (
     <div
       className={cn(
-        "p-5 w-full bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300",
+        "p-5 w-full rounded-lg bg-white transition-all duration-300",
         className
       )}
       {...props}

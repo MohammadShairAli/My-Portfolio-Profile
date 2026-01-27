@@ -22,6 +22,8 @@ type DomeGalleryProps = {
     imageBorderRadius?: string;
     openedImageBorderRadius?: string;
     grayscale?: boolean;
+    /** Positive moves globe down, negative moves it up */
+    verticalOffsetPx?: number;
 };
 
 type ItemDef = {
@@ -204,7 +206,8 @@ export default function DomeGallery({
     openedImageHeight = 'auto',
     imageBorderRadius = '30px',
     openedImageBorderRadius = '30px',
-    grayscale = false
+    grayscale = false,
+    verticalOffsetPx = 0
 }: DomeGalleryProps) {
     const rootRef = useRef<HTMLDivElement>(null);
     const mainRef = useRef<HTMLDivElement>(null);
@@ -646,6 +649,7 @@ export default function DomeGallery({
       margin: auto;
       perspective: calc(var(--radius) * 2);
       perspective-origin: 50% 50%;
+      transform: translateY(var(--vertical-offset, 0px));
     }
     
     .sphere {
@@ -727,7 +731,8 @@ export default function DomeGallery({
                         ['--overlay-blur-color' as any]: overlayBlurColor,
                         ['--tile-radius' as any]: imageBorderRadius,
                         ['--enlarge-radius' as any]: openedImageBorderRadius,
-                        ['--image-filter' as any]: grayscale ? 'none' : 'none'
+                        ['--image-filter' as any]: grayscale ? 'none' : 'none',
+                        ['--vertical-offset' as any]: `${verticalOffsetPx}px`
                     } as React.CSSProperties
                 }
             >

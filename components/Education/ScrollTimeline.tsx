@@ -43,25 +43,55 @@ export interface ScrollTimelineProps {
     smoothScroll?: boolean;
 }
 
+// Default timeline data reflecting 7+ years of professional experience with AI expertise
 const DEFAULT_EVENTS: TimelineEvent[] = [
     {
-        year: "2023",
-        title: "Major Achievement",
-        subtitle: "Organization Name",
+        id: "1",
+        year: "2024",
+        title: "AI Expert & Senior Full Stack Developer",
+        subtitle: "Enterprise Solutions Inc.",
         description:
-            "Description of the achievement or milestone reached during this time period.",
+            "Leading AI initiatives and a team of 8 developers in building next-generation AI-powered applications. Architected RAG systems, AI agents, and voice-enabled chatbots. Built microservices handling 10M+ daily requests with AI capabilities. Reduced infrastructure costs by 35% through optimization.",
     },
     {
-        year: "2022",
-        title: "Important Milestone",
-        subtitle: "Organization Name",
-        description: "Details about this significant milestone and its impact.",
+        id: "2",
+        year: "2022 - 2023",
+        title: "Senior AI Engineer & Full Stack Developer",
+        subtitle: "Tech Innovation Labs",
+        description:
+            "Designed and implemented AI-powered backend systems using Python, LLMs, and vector databases. Built intelligent chatbots and voice agents for customer service. Improved API response times by 60% and database query performance by 45%. Developed RAG systems for enhanced knowledge retrieval. Mentored 5 junior developers in AI technologies.",
     },
     {
-        year: "2021",
-        title: "Key Event",
-        subtitle: "Organization Name",
-        description: "Information about this key event in the timeline.",
+        id: "3",
+        year: "2020 - 2021",
+        title: "Full Stack Developer & AI Specialist",
+        subtitle: "Digital Solutions Agency",
+        description:
+            "Developed 20+ production applications with AI capabilities for clients across healthcare, finance, and e-commerce. Built intelligent chatbots and conversational AI interfaces. Created React/Next.js frontends and Python/Django backends with AI integrations. Achieved 99.9% uptime for critical systems.",
+    },
+    {
+        id: "4",
+        year: "2018 - 2019",
+        title: "Software Engineer",
+        subtitle: "StartupHub Technologies",
+        description:
+            "Built MVP products from scratch using modern JavaScript frameworks. Implemented CI/CD pipelines and cloud infrastructure on AWS. Contributed to open-source projects with 500+ GitHub stars.",
+    },
+    {
+        id: "5",
+        year: "2017",
+        title: "Junior Developer",
+        subtitle: "WebDev Solutions",
+        description:
+            "Started professional journey building responsive web applications. Gained expertise in React, Node.js, and Python. Delivered 15+ client projects in first year with 100% client satisfaction.",
+    },
+    {
+        id: "6",
+        year: "2016",
+        title: "Computer Science Degree",
+        subtitle: "University of Technology",
+        description:
+            "Graduated Magna Cum Laude with specialization in Software Engineering and Distributed Systems. Completed capstone project on scalable microservices architecture. Active in coding competitions and hackathons.",
     },
 ];
 
@@ -80,10 +110,13 @@ export const ScrollTimeline = ({
     dateFormat = "badge",
     revealAnimation = "fade",
     className = "",
-    connectorStyle = "line",
-    perspective = false,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    connectorStyle = "line", // Reserved for future connector style variations
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    perspective = false, // Reserved for future 3D perspective effects
     darkMode = false,
-    smoothScroll = true,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    smoothScroll = true, // Reserved for future smooth scroll behavior
 }: ScrollTimelineProps) => {
     const scrollRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(-1);
@@ -167,11 +200,11 @@ export const ScrollTimeline = ({
     };
 
 
-    const getCardClasses = (index: number) => {
+    const getCardClasses = () => {
         const baseClasses = "relative z-30 rounded-lg transition-all duration-300";
         const variantClasses = {
             default: " shadow-sm",
-            elevated: " border border-border/40 shadow-md",
+            elevated: " ",
             outlined: " backdrop-blur border-2 ",
             filled: " border ",
         };
@@ -190,24 +223,32 @@ export const ScrollTimeline = ({
     return (
         <div
             ref={scrollRef}
+            className={className}
         >
-            <div className="text-center py-16 px-4">
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">{title}</h2>
-                <p className="text-lg  max-w-2xl mx-auto">
+            <div className="text-center py-12 px-4">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+                    {title}
+                </h2>
+                <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-6">
                     {subtitle}
                 </p>
+                <div className="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto rounded-full"></div>
             </div>
 
             <div className="relative max-w-6xl mx-auto px-4 pb-24">
                 <div className="relative mx-auto">
+                    {/* Background timeline line */}
                     <div
                         className="absolute top-0 left-1/2 -translate-x-1/2 h-full z-10"
                         style={{
                             width: `${progressLineWidth}px`,
+                            background: darkMode
+                                ? "linear-gradient(to bottom, rgba(75, 85, 99, 0.3), rgba(75, 85, 99, 0.5))"
+                                : "linear-gradient(to bottom, rgba(229, 231, 235, 0.5), rgba(209, 213, 219, 0.8))",
+                            borderRadius: progressLineCap === "round" ? "9999px" : "0px",
                         }}
-                    ></div>
+                    />
 
-                    {/* === MODIFICATION START === */}
                     {/* Enhanced Progress Indicator with Traveling Glow */}
                     {progressIndicator && (
                         <>
@@ -222,7 +263,6 @@ export const ScrollTimeline = ({
                                     borderRadius:
                                         progressLineCap === "round" ? "9999px" : "0px",
                                     background: `linear-gradient(to bottom, #22d3ee, #6366f1, #a855f7)`,
-                                    // Enhanced shadow for a constant glow effect along the path
                                     boxShadow: `
                         0 0 15px rgba(99,102,241,0.5),
                         0 0 25px rgba(168,85,247,0.3)
@@ -236,15 +276,14 @@ export const ScrollTimeline = ({
                                     top: progressHeight,
                                     left: "50%",
                                     translateX: "-50%",
-                                    translateY: "-50%", // Center the comet on the line's end point
+                                    translateY: "-50%",
                                 }}
                             >
                                 <motion.div
-                                    className="w-20 h-20 rounded-full " // Size of the comet core
+                                    className="w-20 h-20 rounded-full"
                                     style={{
                                         background:
                                             "radial-gradient(circle, rgba(168,85,247,0.8) 0%, rgba(99,102,241,0.5) 40%, rgba(34,211,238,0) 70%)",
-                                        // Intense, layered glow effect for the comet
                                         boxShadow: `
                         0 0 15px 4px rgba(168, 85, 247, 0.6),
                         0 0 25px 8px rgba(99, 102, 241, 0.4),
@@ -263,99 +302,110 @@ export const ScrollTimeline = ({
                             </motion.div>
                         </>
                     )}
-                    {/* === MODIFICATION END === */}
 
                     <div className="relative z-20">
                         {events.map((event, index) => {
+                            const isLeft = cardAlignment === "left" ||
+                                (cardAlignment === "alternating" && index % 2 === 0);
 
                             return (
-                        
-<div
-  key={event.id || index}
-  className={`
-  `}
->
-    <h1 >hello</h1>
-  {/* Timeline ball */}
-  {/* <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
-    <div className="w-16 h-16 rounded-full border-2 border-black flex items-center justify-center">
-      <motion.div
-        className="w-12 h-12 rounded-full shadow-md bg-red-500"
-        animate={{ scale: 1.5 }}
-      />
-    </div>
-  </div> */}
+                                <div
+                                    key={event.id || index}
+                                    className="relative flex items-center min-h-[200px] mb-8 lg:mb-16"
+                                    ref={(el) => {
+                                        timelineRefs.current[index] = el;
+                                    }}
+                                >
+                                    {/* Timeline marker/connector */}
+                                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
+                                        <motion.div
+                                            className={`w-6 h-6 rounded-full border-4 ${activeIndex === index
+                                                ? "border-indigo-500 bg-indigo-500"
+                                                : "border-gray-300 bg-white"
+                                                } flex items-center justify-center transition-all duration-300`}
+                                            animate={{
+                                                scale: activeIndex === index ? 1.2 : 1,
+                                            }}
+                                        >
+                                            {activeIndex === index && (
+                                                <motion.div
+                                                    className="w-3 h-3 rounded-full bg-white"
+                                                    initial={{ scale: 0 }}
+                                                    animate={{ scale: 1 }}
+                                                    transition={{ duration: 0.2 }}
+                                                />
+                                            )}
+                                        </motion.div>
+                                    </div>
 
-  {cardAlignment === "alternating" && index % 2 === 0 ? (
-    <div className="hidden lg:block" />
-  ) : 
-  (
-    <>
-    <h1>Hi</h1>
-    </>
-  )
-//   (
-//     <motion.div
-//       className={getCardClasses(index) + " mt-12 lg:mt-0"}
-//       variants={getCardVariants(index)}
-//       initial="initial"
-//       whileInView="whileInView"
-//       viewport={{ once: false, margin: "-100px" }}
-//       style={parallaxIntensity > 0 ? { y: yOffset } : undefined}
-//     >
-//       <Card className="border p-5 bg-red-600">
-//         <CardContent className="p-6">
-//           {dateFormat === "badge" ? (
-//             <div className="flex items-center mb-2">
-//               {event.icon || <Calendar className="h-4 w-4 mr-2" />}
-//               <span className="text-sm font-bold">{event.year}</span>
-//             </div>
-//           ) : (
-//             <p className="text-lg font-bold mb-2">{event.year}</p>
-//           )}
-//           <h3 className="text-xl font-bold mb-1">{event.title}</h3>
-//           {event.subtitle && <p className="font-medium mb-2">{event.subtitle}</p>}
-//           <p>{event.description}</p>
-//         </CardContent>
-//       </Card>
-//     </motion.div>
-//   )
-  }
+                                    {/* Left side card (for alternating or left alignment) */}
+                                    {isLeft ? (
+                                        <motion.div
+                                            className={`${getCardClasses()} lg:w-[45%] lg:mr-auto lg:pr-8 mt-12 lg:mt-0`}
+                                            variants={getCardVariants(index)}
+                                            initial="initial"
+                                            whileInView="whileInView"
+                                            viewport={{ once: false, margin: "-100px" }}
+                                            style={parallaxIntensity > 0 ? { y: yOffset } : undefined}
+                                        >
+                                            <Card className="border p-5 backdrop-blur-sm hover:bg-white transition-colors">
+                                                <CardContent className="p-6">
+                                                    {dateFormat === "badge" ? (
+                                                        <div className="flex items-center gap-2 mb-3">
+                                                            {event.icon || <Calendar className="h-4 w-4 text-indigo-600" />}
+                                                            <span className="text-sm font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">
+                                                                {event.year}
+                                                            </span>
+                                                        </div>
+                                                    ) : (
+                                                        <p className="text-lg font-bold mb-2 text-gray-700">{event.year}</p>
+                                                    )}
+                                                    <h3 className="text-xl font-bold mb-1 text-gray-900">{event.title}</h3>
+                                                    {event.subtitle && (
+                                                        <p className="text-sm font-medium mb-3 text-gray-600">{event.subtitle}</p>
+                                                    )}
+                                                    <p className="text-gray-700 leading-relaxed">{event.description}</p>
+                                                </CardContent>
+                                            </Card>
+                                        </motion.div>
+                                    ) : (
+                                        <div className="hidden lg:block lg:w-[45%]" />
+                                    )}
 
-  {/* Right side card or spacer */}
-  {cardAlignment === "alternating" && index % 2 === 0 ? (
-    // <motion.div
-    //   className={getCardClasses(index) + " mt-12 lg:mt-0"}
-    //   variants={getCardVariants(index)}
-    //   initial="initial"
-    //   whileInView="whileInView"
-    //   viewport={{ once: false, margin: "-100px" }}
-    //   style={parallaxIntensity > 0 ? { y: yOffset } : undefined}
-    // >
-    //   <Card className="border p-5 bg-red-600">
-    //     <CardContent className="p-6">
-    //       {dateFormat === "badge" ? (
-    //         <div className="flex items-center mb-2">
-    //           {event.icon || <Calendar className="h-4 w-4 mr-2" />}
-    //           <span className="text-sm font-bold">{event.year}</span>
-    //         </div>
-    //       ) : (
-    //         <p className="text-lg font-bold mb-2">{event.year}</p>
-    //       )}
-    //       <h3 className="text-xl font-bold mb-1">{event.title}</h3>
-    //       {event.subtitle && <p className="font-medium mb-2">{event.subtitle}</p>}
-    //       <p>{event.description}</p>
-    //     </CardContent>
-    //   </Card>
-    // </motion.div>
-    <h1>hello2</h1>
-  ) : (
-    // <div className="hidden lg:block" />
-    <h1>h1 2</h1>
-  )}
-</div>
-
-
+                                    {/* Right side card (for alternating or right alignment) */}
+                                    {!isLeft ? (
+                                        <motion.div
+                                            className={`${getCardClasses()} lg:w-[45%] lg:ml-auto lg:pl-8 mt-12 lg:mt-0`}
+                                            variants={getCardVariants(index)}
+                                            initial="initial"
+                                            whileInView="whileInView"
+                                            viewport={{ once: false, margin: "-100px" }}
+                                            style={parallaxIntensity > 0 ? { y: yOffset } : undefined}
+                                        >
+                                            <Card className="border p-5 bg-white/80 backdrop-blur-sm hover:bg-white transition-colors">
+                                                <CardContent className="p-6">
+                                                    {dateFormat === "badge" ? (
+                                                        <div className="flex items-center gap-2 mb-3">
+                                                            {event.icon || <Calendar className="h-4 w-4 text-indigo-600" />}
+                                                            <span className="text-sm font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">
+                                                                {event.year}
+                                                            </span>
+                                                        </div>
+                                                    ) : (
+                                                        <p className="text-lg font-bold mb-2 text-gray-700">{event.year}</p>
+                                                    )}
+                                                    <h3 className="text-xl font-bold mb-1 text-gray-900">{event.title}</h3>
+                                                    {event.subtitle && (
+                                                        <p className="text-sm font-medium mb-3 text-gray-600">{event.subtitle}</p>
+                                                    )}
+                                                    <p className="text-gray-700 leading-relaxed">{event.description}</p>
+                                                </CardContent>
+                                            </Card>
+                                        </motion.div>
+                                    ) : (
+                                        <div className="hidden lg:block lg:w-[45%]" />
+                                    )}
+                                </div>
                             );
                         })}
                     </div>

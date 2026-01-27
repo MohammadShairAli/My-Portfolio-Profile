@@ -95,7 +95,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
             ref={rootRef}
             onPointerMove={handleMove}
             onPointerLeave={handleLeave}
-            className={`bg-white relative w-full h-full flex flex-wrap justify-center items-start gap-3 ${className}`}
+            className={`relative w-full h-full flex flex-wrap justify-center items-start gap-6 ${className}`}
             style={
                 {
                     '--r': `${radius}px`,
@@ -108,14 +108,22 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                 <article
                     key={i}
                     onMouseMove={handleCardMove}
-
-                    className="brightness-70 hover:brightness-110 hover:opacity-100 opacity-50 group relative flex flex-col w-[300px] rounded-[20px] overflow-hidden border-2 border-transparent transition duration-300 filter"
+                    className="brightness-95 hover:brightness-110 hover:opacity-100 opacity-75 group relative flex flex-col w-[350px] sm:w-[370px] h-[520px] rounded-3xl overflow-hidden border border-gray-200/50 transition-all duration-500 filter shadow-lg hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 bg-white"
                     style={{
                         '--card-border': c.borderColor || 'transparent',
-                        background: c.gradient,
-                        '--spotlight-color': 'rgba(255,255,255,0.3)'
+                        '--spotlight-color': 'rgba(99, 102, 241, 0.15)',
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.05)'
                     } as React.CSSProperties}
                 >
+                    {/* Theme-matching gradient overlay */}
+                    <div 
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"
+                        style={{
+                            background: `linear-gradient(135deg, ${c.borderColor || '#6366f1'}15, ${c.borderColor || '#8b5cf6'}10)`
+                        }}
+                    />
+                    
+                    {/* Enhanced spotlight effect with theme colors */}
                     <div
                         className="absolute inset-0 pointer-events-none transition-opacity duration-500 z-20 opacity-0 group-hover:opacity-100"
                         style={{
@@ -123,48 +131,65 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                                 'radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)'
                         }}
                     />
-                    <div className="relative z-10 flex-1 p-[10px] box-border">
-                        <img src={c.image} alt={c.title} loading="lazy" className="w-full h-full object-cover rounded-[10px]" />
-                    </div>
-                    <footer className="relative z-10 p-3 text-white font-sans space-y-3">
-                        <div className='flex justify-between'>
-                            <h3 className="m-0 text-[1.05rem] font-semibold">{c.title}</h3>
-                            <button
-                                onClick={() => handleCardClick(c.url)}
-                                className="relative cursor-pointer text-[0.95rem] font-medium px-3 py-1 rounded transition-all duration-300 text-white flex items-center gap-2 overflow-hidden"
-
-                                onMouseEnter={e => {
-                                    const btn = e.currentTarget as HTMLButtonElement;
-                                    btn.style.background = c.borderColor; // full button changes to borderColor on hover
-                                    const arrow = btn.querySelector('.arrow') as HTMLElement;
-                                    if (arrow) arrow.style.opacity = '1';
-                                    if (arrow) arrow.style.transform = 'translateX(5px)';
+                    
+                    {/* Image container with theme styling */}
+                    <div className="relative z-10 flex-shrink-0 p-4 box-border">
+                        <div className="relative w-full h-[240px] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200/50 shadow-inner">
+                            <img 
+                                src={c.image} 
+                                alt={c.title} 
+                                loading="lazy" 
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            
+                            {/* Theme accent border on hover */}
+                            <div 
+                                className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-opacity-30 transition-all duration-300"
+                                style={{
+                                    borderColor: c.borderColor || '#6366f1'
                                 }}
-                                onMouseLeave={e => {
-                                    const btn = e.currentTarget as HTMLButtonElement;
-                                    btn.style.background = c.gradient; // restore original gradient
-                                    const arrow = btn.querySelector('.arrow') as HTMLElement;
-                                    if (arrow) arrow.style.opacity = '0';
-                                    if (arrow) arrow.style.transform = 'translateX(0)';
+                            />
+                        </div>
+                    </div>
+                    
+                    {/* Enhanced footer matching theme */}
+                    <footer className="relative z-10 flex-1 flex flex-col justify-between p-6 text-gray-900 font-sans space-y-4 bg-white border-t border-gray-100">
+                        <div className='space-y-2'>
+                            <h3 className="m-0 text-xl sm:text-2xl font-extrabold leading-tight bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                                {c.title}
+                            </h3>
+                            <p className="m-0 text-sm sm:text-base text-gray-600 leading-relaxed font-medium">
+                                {c.subtitle}
+                            </p>
+                        </div>
+                        
+                        <button
+                            onClick={() => handleCardClick(c.url)}
+                            className="relative cursor-pointer text-sm font-bold px-6 py-3 rounded-xl transition-all duration-300 text-white flex items-center justify-center gap-2 overflow-hidden bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 group w-full shadow-md hover:shadow-lg transform hover:scale-[1.02]"
+                            onMouseEnter={e => {
+                                const arrow = e.currentTarget.querySelector('.arrow') as HTMLElement;
+                                if (arrow) arrow.style.opacity = '1';
+                                if (arrow) arrow.style.transform = 'translateX(6px)';
+                            }}
+                            onMouseLeave={e => {
+                                const arrow = e.currentTarget.querySelector('.arrow') as HTMLElement;
+                                if (arrow) arrow.style.opacity = '0';
+                                if (arrow) arrow.style.transform = 'translateX(0)';
+                            }}
+                        >
+                            <span className="font-semibold">View Project</span>
+                            <span
+                                className="arrow transition-all duration-300 text-lg font-bold"
+                                style={{
+                                    opacity: 0,
+                                    transform: 'translateX(0)',
+                                    display: 'inline-block',
                                 }}
                             >
-                                Explore
-                                <span
-                                    className="arrow transition-all duration-300"
-                                    style={{
-                                        opacity: 0,
-                                        transform: 'translateX(0)',
-                                        display: 'inline-block',
-                                    }}
-                                >
-                                    -&gt;
-                                </span>
-                            </button>
-
-                        </div>
-
-                        <p className="m-0 text-[0.85rem] opacity-85">{c.subtitle}</p>
-                        {/* {c.location && <span className="text-[0.85rem] opacity-85 text-right">{c.location}</span>} */}
+                                →
+                            </span>
+                        </button>
                     </footer>
                 </article>
             ))}
