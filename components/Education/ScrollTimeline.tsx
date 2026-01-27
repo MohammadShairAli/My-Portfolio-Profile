@@ -203,11 +203,12 @@ export const ScrollTimeline = ({
     const getCardClasses = () => {
         const baseClasses = "relative z-30 rounded-lg transition-all duration-300";
         const variantClasses = {
-            // default: " shadow-sm",
-            elevated: " ",
-            outlined: " backdrop-blur border-2 ",
-            filled: " border ",
-        };
+  default: "",
+  elevated: "",
+  outlined: "backdrop-blur border-2",
+  filled: "border",
+} satisfies Record<NonNullable<ScrollTimelineProps["cardVariant"]>, string>;
+
         const effectClasses = {
             none: "",
             glow: "hover:shadow-[0_0_15px_rgba(var(--primary-rgb))]",

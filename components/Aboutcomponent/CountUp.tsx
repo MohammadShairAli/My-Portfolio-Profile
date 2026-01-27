@@ -13,6 +13,7 @@ interface CountUpProps {
   separator?: string;
   onStart?: () => void;
   onEnd?: () => void;
+  startCounting?:boolean
 }
 
 export default function CountUp({

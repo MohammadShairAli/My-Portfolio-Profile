@@ -1,13 +1,14 @@
 import React from 'react';
 
-const cn = (...classes) => classes.filter(Boolean).join(' ');
+const cn = (...classes: (string | undefined | null | false)[]) =>
+  classes.filter(Boolean).join(' ');
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
 }
 
-export const Card = ({ children, className, ...props }) => {
+export const Card: React.FC<CardProps> = ({ children, className, ...props }) => {
   return (
     <div
       className={cn(
