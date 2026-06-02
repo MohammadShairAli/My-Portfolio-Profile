@@ -32,7 +32,7 @@ export default function Landingpage() {
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 opacity-20 blur-3xl animate-pulse"></div>
               <div className="relative w-full h-full rounded-full border-4 border-indigo-200 shadow-2xl overflow-hidden bg-white p-2">
                 <Image
-                  src="/profile_img.png"
+                  src="/profile_img.jpg"
                   alt="Professional Profile"
                   width={500}
                   height={500}
@@ -48,7 +48,7 @@ export default function Landingpage() {
             <div className="space-y-4">
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                 <TextType
-                  text={["Ali Abid", ""]}
+                  text={["Shair Ali", ""]}
                   typingSpeed={75}
                   pauseDuration={1500}
                   showCursor
@@ -81,9 +81,14 @@ export default function Landingpage() {
             </div>
 
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-              With <span className="font-bold text-indigo-600">7+ years</span> of experience, I specialize in <span className="font-bold text-purple-600">AI solutions</span>, 
-              including RAG systems, AI agents, voice agents, and chatbots. Building intelligent, scalable applications that leverage cutting-edge AI technologies.
-            </p>
+  With <span className="font-bold text-indigo-600">2+ years</span> of experience, I specialize in
+  <span className="font-bold text-purple-600"> AI solutions</span>, including RAG systems, AI agents, and chatbots,
+  while building modern full-stack applications with
+  <span className="font-bold text-blue-600"> Next.js</span>,
+  <span className="font-bold text-cyan-600"> React</span>, and
+  <span className="font-bold text-green-600"> Django</span>.
+  My focus is on creating intelligent, scalable, and user-centric digital products.
+</p>
 
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
               <a 

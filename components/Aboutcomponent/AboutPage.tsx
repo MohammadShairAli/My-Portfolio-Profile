@@ -27,16 +27,14 @@ export default function AboutPage() {
             <ScrollReveal textClassName="text-lg sm:text-xl text-gray-700 leading-relaxed">
               With over <span className="font-bold text-indigo-600">7 years</span> of professional experience, 
               I've built a career specializing in <span className="font-bold text-purple-600">AI solutions</span>, 
-              full-stack web development, and cloud infrastructure. My expertise spans RAG (Retrieval-Augmented Generation) 
-              systems, AI agents, voice agents, chatbots, modern JavaScript frameworks, Python backend systems, and 
-              cloud-native architectures.
+              and full-stack web development. My expertise spans RAG (Retrieval-Augmented Generation) 
+              systems, AI agents, chatbots, modern JavaScript frameworks and Python backend systems
             </ScrollReveal>
 
             <ScrollReveal textClassName="text-lg sm:text-xl text-gray-700 leading-relaxed">
-              I've successfully built intelligent AI-powered applications including conversational chatbots, voice-enabled 
-              agents, and RAG systems that enhance knowledge retrieval and user interactions. I've delivered enterprise-grade 
-              applications serving millions of users, optimized database performance by up to 60%, and architected 
-              microservices that handle high-traffic loads with AI capabilities.
+              I've successfully built intelligent AI-powered applications including conversational chatbots
+              agents and RAG systems that enhance knowledge retrieval and user interactions. I've delivered enterprise-grade 
+              applications serving thousands of users, optimized quries that handle high-traffic loads with AI capabilities.
             </ScrollReveal>
 
             <ScrollReveal textClassName="text-lg sm:text-xl text-gray-700 leading-relaxed">
@@ -50,23 +48,22 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 gap-6">
             <div className="p-6 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <Brain className="w-12 h-12 text-indigo-600 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">AI & ML</h3>
-              <p className="text-gray-600">RAG, LLMs, AI Agents, Voice Agents, Chatbots</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">AI & Web</h3>
+              <p className="text-gray-600">RAG, LLMs, AI Agents, Chatbots</p>
             </div>
             <div className="p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <Code className="w-12 h-12 text-purple-600 mb-4" />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Full Stack</h3>
-              <p className="text-gray-600">React, Next.js, Node.js, TypeScript, Python</p>
+              <p className="text-gray-600">React, Next.js, TypeScript, Python</p>
             </div>
-            <div className="p-6 bg-gradient-to-br from-pink-50 to-red-50 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+            {/* <div className="p-6 bg-gradient-to-br from-pink-50 to-red-50 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <Cloud className="w-12 h-12 text-pink-600 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Cloud & DevOps</h3>
               <p className="text-gray-600">AWS, Docker, Kubernetes, CI/CD</p>
-            </div>
+            </div> */}
             <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <Database className="w-12 h-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Data & AI</h3>
-              <p className="text-gray-600">Vector DBs, PostgreSQL, MongoDB, Redis, Celery</p>
+              <p className="text-gray-600">Vector DBs, PostgreSQL, Redis, Celery</p>
             </div>
           </div>
         </div>
@@ -78,8 +75,8 @@ export default function AboutPage() {
             <div className="flex items-baseline justify-center space-x-2 mb-4">
               <CountUp
                 from={0}
-                to={7}
-                duration={2}
+                to={2}
+                duration={1}
                 className="text-5xl sm:text-6xl md:text-7xl font-extrabold"
                 startCounting={true}
               />
@@ -94,7 +91,7 @@ export default function AboutPage() {
             <div className="flex items-baseline justify-center space-x-2 mb-4">
               <CountUp
                 from={0}
-                to={150}
+                to={50}
                 duration={2.5}
                 separator=","
                 className="text-5xl sm:text-6xl md:text-7xl font-extrabold"
@@ -111,7 +108,7 @@ export default function AboutPage() {
             <div className="flex items-baseline justify-center space-x-2 mb-4">
               <CountUp
                 from={0}
-                to={80}
+                to={30}
                 duration={2}
                 className="text-5xl sm:text-6xl md:text-7xl font-extrabold"
                 startCounting={true}

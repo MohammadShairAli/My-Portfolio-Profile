@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ali Abid - AI Expert & Full Stack Developer | Portfolio",
-  description: "AI Expert with 7+ years of experience. Specializing in RAG systems, AI agents, voice agents, and chatbots. Expert in React, Next.js, Python, and cloud architectures. View my portfolio of AI-powered enterprise projects.",
-  keywords: ["AI Expert", "RAG Systems", "AI Agents", "Voice Agents", "Chatbots", "Full Stack Developer", "Python Developer", "React Developer", "Cloud Architect", "LLM", "Machine Learning"],
-  authors: [{ name: "Ali Abid" }],
+  title: "Shair Ali - AI Expert & Full Stack Developer | Portfolio",
+  description: "AI Expert with 2+ years of experience. Specializing in RAG systems, AI agents, and chatbots. Expert in React, Next.js and Python. View my portfolio of AI-powered enterprise projects.",
+  keywords: ["AI Expert", "RAG Systems", "AI Agents", "Chatbots", "Full Stack Developer", "Python Developer", "React Developer",  "LLM"],
+  authors: [{ name: "Shair Ali" }],
   openGraph: {
-    title: "Ali Abid - AI Expert & Full Stack Developer",
-    description: "AI Expert specializing in RAG, AI agents, voice agents, and chatbots. 7+ years of experience building scalable AI-powered applications",
+    title: "Shair Ali - AI Expert & Full Stack Developer",
+    description: "AI Expert specializing in RAG, AI agents, and chatbots. 2+ years of experience building scalable AI-powered applications",
     type: "website",
   },
 };

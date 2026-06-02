@@ -4,22 +4,6 @@ import ChromaGrid from './ChromaGrid'
 export default function ProjectsPage() {
     const items = [
         {
-            image: "/dinein1.png",
-            title: "DineIn Platform",
-            subtitle: "Enterprise Restaurant Management SAAS",
-            borderColor: "#EF4444",
-            gradient: "linear-gradient(145deg, #EF4444, #B91C1C)",
-            url: "https://dinein.pk/"
-        }, 
-        {
-            image: "/travelmultiverse1.png",
-            title: "Travel Multiverse",
-            subtitle: "AI-Powered Travel Discovery & Booking Platform",
-            borderColor: "rgb(8, 131, 149)",
-            gradient: "linear-gradient(145deg, rgb(8, 131, 149), #000)",
-            url: "https://travelmultiverse.com/"
-        }, 
-        {
             image: "/FStreet1.png",
             title: "FStreet Social",
             subtitle: "Real-time Restaurant Table Booking System",
@@ -34,6 +18,21 @@ export default function ProjectsPage() {
             borderColor: "oklch(0.45 0.085 224.283)",
             gradient: "linear-gradient(145deg, oklch(0.45 0.085 224.283), #000)",
             url: "https://georgiaforeclosure.egtw.org/"
+        },
+        {
+            image: "/travelmultiverse1.png",
+            title: "Travel Multiverse",
+            subtitle: "AI-Powered Travel Discovery & Booking Platform",
+            borderColor: "rgb(8, 131, 149)",
+            gradient: "linear-gradient(145deg, rgb(8, 131, 149), #000)",
+            url: "https://travelmultiverse.com/"
+        }, {
+            image: "/dinein1.png",
+            title: "DineIn Platform",
+            subtitle: "Enterprise Restaurant Management SAAS",
+            borderColor: "#EF4444",
+            gradient: "linear-gradient(145deg, #EF4444, #B91C1C)",
+            url: "https://dinein.pk/"
         }, 
         {
             image: "/Amazon1.png",
