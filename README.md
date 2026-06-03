@@ -8,10 +8,10 @@ I bring real-world experience delivering projects across multiple industries, in
 
 ## What I Build
 
-- **FStreet Social** — a real-time restaurant table booking platform designed for seamless customer reservations and venue management.
-- **Georgia Foreclosure Hub** — a property discovery and investment portal that connects users with foreclosure opportunities.
-- **Travel Multiverse** — an AI-powered travel discovery and booking experience that recommends destinations and travel options.
-- **DineIn Platform** — an enterprise SaaS system for restaurant operations, order management, and service optimization.
+- **FStreet Social** : a real-time restaurant table booking platform designed for seamless customer reservations and venue management.
+- **Georgia Foreclosure Hub** : a property discovery and investment portal that connects users with foreclosure opportunities.
+- **Travel Multiverse** : an AI-powered travel discovery and booking experience that recommends destinations and travel options.
+- **DineIn Platform** : an enterprise SaaS system for restaurant operations, order management, and service optimization.
 - **Data automation tools** for Amazon, Google Sheets, and multi-platform integrations that simplify data aggregation and business workflows.
 
 ## My Strengths
