@@ -32,7 +32,7 @@ export default function Landingpage() {
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 opacity-20 blur-3xl animate-pulse"></div>
               <div className="relative w-full h-full rounded-full border-4 border-indigo-200 shadow-2xl overflow-hidden bg-white p-2">
                 <Image
-                  src="/profile_img.jpg"
+                  src="public/profile_img.jpg"
                   alt="Professional Profile"
                   width={500}
                   height={500}
